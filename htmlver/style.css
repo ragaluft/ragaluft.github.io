@@ -1,0 +1,212 @@
+/* Reset gaya dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Background utama */
+body {
+    background: linear-gradient(to right, #2c3e50, #3498db);
+    color: white;
+}
+
+/* Container utama */
+.container {
+    text-align: center;
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+}
+
+/* Judul */
+#judul {
+    font-size: 28px;
+    margin-bottom: 10px;
+}
+
+#statusParkir {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Form input */
+.forml {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+#platNomor {
+    width: 60%;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 5px;
+    outline: none;
+    transition: 0.3s;
+}
+
+#platNomor:focus {
+    border-color: #f1c40f;
+}
+
+#butonmasuk {
+    padding: 10px 15px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #f1c40f;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#butonmasuk:hover {
+    background: #e67e22;
+}
+
+/* Area Parkir */
+.parkir-container {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: 50px;
+    margin-top: 30px;
+    justify-content: center;
+}
+
+.slot {
+    position: relative;
+    width: 80px;
+    height: 100px;
+    background: #27ae60;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.slot.terisi {
+    background: #e74c3c;
+}
+
+.slot img {
+    width: 30px;
+    height: auto;
+    position: absolute;
+    bottom: 10px;
+}
+
+.plat-nomor {
+    position: absolute;
+    top: 5px;
+    font-size: 12px;
+    font-weight: bold;
+    color: white;
+}
+
+/* Tombol keluar */
+.remove-btn {
+    position: absolute;
+    bottom: -25px;
+    font-size: 12px;
+    background: #c0392b;
+    color: white;
+    padding: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: none;
+}
+
+.slot.terisi .remove-btn {
+    display: block;
+}
+
+/* Animasi Hover */
+.slot:hover {
+    transform: scale(1.1);
+}
+
+/* Tombol Tarik Dana */
+#logoutbtn {
+	padding: 9px;
+	
+}
+.withdraw-btn {
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+    background: #3498db;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.withdraw-btn:hover {
+    background: #2980b9;
+}
+/* Efek masuk kendaraan */
+@keyframes zoomIn {
+    from {
+        transform: scale(0);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.slot.terisi {
+    animation: zoomIn 0.5s ease-out;
+}
+
+/* Efek keluar kendaraan */
+@keyframes fadeOut {
+    to {
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.slot.keluar {
+    animation: fadeOut 0.5s ease-out forwards;
+}
+
+/* Efek hover pada slot yang terisi */
+@keyframes shake {
+
+    25% { transform: translateX(-2px); }
+    50% { transform: translateX(2px); }
+    75% { transform: translateX(-2px); }
+}
+
+.slot.terisi:hover {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Efek pendapatan bertambah */
+@keyframes pulse {
+    0% { color: white; transform: scale(1); }
+    50% { color: #2ecc71; transform: scale(1.2); }
+    100% { color: white; transform: scale(1); }
+}
+
+.pendapatan-flash {
+    animation: pulse 0.5s ease-out;
+}
+
+#modalawal {
+    color: black;
+}
